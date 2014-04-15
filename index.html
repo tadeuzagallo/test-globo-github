@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <div class="date"><%= date %></div>
+        <div class="date"><%= ('0'+date.getDate()).slice(-2) %>/<%= ('0'+date.getMonth()).slice(-2) %>/<%= date.getFullYear() %></div>
       </div>
     </script>
 

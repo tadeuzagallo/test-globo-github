@@ -27,7 +27,7 @@ ul {
 #container::before {
   position: fixed;
 
-  width: calc(50% - 500px);
+  width: calc(50% - 499px);
   top: 0;
   left: 0;
   bottom: 0;

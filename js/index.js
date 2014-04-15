@@ -132,7 +132,7 @@
 
         d.querySelector('#commits').innerHTML += _.map(commits.slice(0, 20), function (commit) {
           commit.author = commit.author || {};
-          commit.date = new Date(commit.commit.author.date).toLocaleFormat('%d/%m/%Y');
+          commit.date = new Date(commit.commit.author.date);
           return tpl.commitDetails(commit);
         }).join('');
       });
