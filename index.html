@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Globo.com github repos</title>
+    <meta charset="utf-8" />
 
     <link rel="stylesheet" href="css/application.css" />
   </head>
@@ -11,41 +12,52 @@
         <h1>projetos</h1>
 
         <ul id="projects">
-          <li class="active">tsuru</li>
-          <li>splinter</li>
-          <li>flask-mongo-api</li>
         </ul>
       </div>
       <div id="content">
+      </div>
+    </div>
+
+    <script type="text/template" id="projects-tpl">
+      <% _.each(projects, function (project, index) { %>
+        <li id="<%= project.name %>">
+          <a href="#/<%= project.name %>">
+            <%= project.name %>
+          </a>
+        </li>
+      <% }) %>
+    </script>
+
+    <script type="text/template" id="project-details-tpl">
         <ul id="stats">
-          <li>stars <span id="stars">34</span></li>
-          <li>forks <span id="forks">13</span></li>
-          <li>contribs <span id="contribs">7</span></li>
+          <li>stars <%= stargazers_count %></li>
+          <li>forks <%= forks_count %></li>
+          <li>contribs <%= 9 %></li>
         </ul>
 
         <div id="commits">
-          <div class="commit">
-            <img class="author-picture" src="http://placehold.it/50x50" alt="commiter picture" />
-            <div class="message">Fixes lorem ipsum</div>
-            <div class="date">12/07/2013</div>
-            <div class="author-username">@loremipsum</div>
-          </div>
-          <div class="commit">
-            <img class="author-picture" src="http://placehold.it/50x50" alt="commiter picture" />
-            <div class="message">Fixes lorem ipsum</div>
-            <div class="date">12/07/2013</div>
-            <div class="author-username">@loremipsum</div>
-          </div>
-          <div class="commit">
-            <img class="author-picture" src="http://placehold.it/50x50" alt="commiter picture" />
-            <div class="message">Fixes lorem ipsum</div>
-            <div class="date">12/07/2013</div>
-            <div class="author-username">@loremipsum</div>
-          </div>
         </div>
 
         <a id="more-commits" href="#">Carregar mais</a>
+    </script>
+
+    <script type="text/template" id="commit-details-tpl">
+      <div class="commit">
+        <img class="author-picture" src="<%= author.avatar_url %>" alt="commiter picture" width="50" />
+        <div class="info">
+          <div class="message"><%= commit.message %></div>
+          <div class="author-username">
+            <a href="<%= author.html_url %>">
+              @<%= author.login  %>
+            </a>
+          </div>
+        </div>
+
+        <div class="date"><%= date %></div>
       </div>
-    </div>
+    </script>
+
+    <script src="js/vendor/lodash/dist/lodash.min.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
