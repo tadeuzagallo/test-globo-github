@@ -1,0 +1,176 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+#container {
+  display: table;
+
+  width: 1000px;
+  height: 100%;
+
+  margin: 0 auto;
+}
+
+#container::before {
+  position: fixed;
+
+  width: calc(50% - 500px);
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: #4D78E8;
+  content: '';
+}
+
+#sidebar {
+  display: table-cell;
+
+  width: 348px;
+
+  background-color: #4D78E8;
+  color: #FFF;
+}
+
+  #sidebar h1 {
+    margin: 12px 23px 0 0;
+
+    text-align: right;
+    font-weight: lighter;
+    letter-spacing: 2.5px;
+    font-size: 80px;
+  }
+
+  #sidebar ul {
+    margin-top: 30px;
+  }
+
+  #sidebar ul li {
+    position: relative;
+    margin: 15px 0;
+    padding-right: 25px;
+
+    text-align: right;
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  #sidebar ul li.active::after {
+    position: absolute;
+    display: block;
+
+    top: 13px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-right: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    content: '';
+  }
+
+#content {
+  display: table-cell;
+
+  width: 562px;
+  padding: 20px 45px;
+}
+
+#stats li{
+  display: inline-block;
+
+  width: 32%;
+
+  color: #666;
+  font-size: 35px;
+  font-weight: 100;
+  text-align: center;
+}
+
+#stats li:first-child {
+  text-align: left;
+}
+
+#stats li:last-child {
+  text-align: right;
+}
+
+#commits {
+  float: left;
+
+  margin-top: 55px;
+}
+
+.commit {
+  float: left;
+
+  width: calc(100% - 26px);
+  padding: 13px 8px;
+  margin-bottom: 10px;
+
+  border: 1px solid #DDD;
+}
+
+  .commit .author-picture {
+    float: left;
+
+    margin-right: 22px;
+  }
+
+  .commit .message {
+    float: left;
+
+    width: 360px;
+
+    color: #666;
+    font-size: 27px;
+    font-weight: 400;
+  }
+
+  .commit .author-username {
+    float: left;
+
+    width: 375px;
+
+    color: #999;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .commit .date {
+    float: right;
+
+    width: 85px;
+    margin-right: 15px;
+
+    color: #999;
+    text-align: right;
+    font-weight: 400;
+  }
+
+#more-commits {
+  float: left;
+  display: block;
+
+  width: 100%;
+  padding: 10px 0;
+
+  color: #FFF;
+  background-color: #CCC;
+  text-align: center;
+  text-decoration: none;
+}
