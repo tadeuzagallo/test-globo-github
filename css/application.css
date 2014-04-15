@@ -68,6 +68,11 @@ ul {
     font-weight: 400;
   }
 
+  #sidebar ul li a {
+    color: #FFF;
+    text-decoration: none;
+  }
+
   #sidebar ul li.active::after {
     position: absolute;
     display: block;
@@ -121,6 +126,7 @@ ul {
   width: calc(100% - 26px);
   padding: 13px 8px;
   margin-bottom: 10px;
+  overflow: hidden;
 
   border: 1px solid #DDD;
 }
@@ -129,6 +135,12 @@ ul {
     float: left;
 
     margin-right: 22px;
+  }
+
+  .commit .info {
+    float: left;
+
+    width: 360px;
   }
 
   .commit .message {
@@ -144,11 +156,14 @@ ul {
   .commit .author-username {
     float: left;
 
-    width: 375px;
+    width: 360px;
+  }
 
+  .commit .author-username a {
     color: #999;
     font-size: 22px;
     font-weight: 400;
+    text-decoration: none;
   }
 
   .commit .date {
