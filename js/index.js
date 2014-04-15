@@ -103,7 +103,13 @@
   });
 
   function loadHash() {
-    var repo = github.repo(w.location.hash.substr(2));
+    var repoName = w.location.hash.substr(2);
+
+    if (!repoName) {
+      return;
+    }
+
+    var repo = github.repo(repoName);
 
     (document.querySelector('li.active') || {}).className = '';
     content.innerHTML = ''; 
